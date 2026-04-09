@@ -22,7 +22,7 @@ body {
 }
 
 /* Quadrado proncipal */
-,.loader {
+.loader {
     background: gold;
     animation: rotating 2s linear infinite;
     transition: 0.5s;
