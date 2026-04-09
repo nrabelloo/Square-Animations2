@@ -1,0 +1,90 @@
+/* Reset básico e centralização */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    overflow: hidden;
+}
+
+/* Estilo Base */
+.loader,
+.loader span {
+    width: 10em;
+    height: 10em;
+    border: 0.25em solid white;
+    border-radius: 1em;
+    position: absolute;
+    font-size: 10px;
+    mix-blend-mode: screen;
+}
+
+/* Quadrado proncipal */
+,.loader {
+    background: gold;
+    animation: rotating 2s linear infinite;
+    transition: 0.5s;
+}
+
+/* Animação principal */
+@keyframes rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* Quadrados internos */
+.loader span {
+    animation: de-rotating 4s linear infinite;
+    transition: 0.5s;
+}
+
+/* Animação dos spans */
+@keyframes de-rotating {
+    from, to {
+        transform: rotate(0deg) scale(0.5);
+    }
+    50% {
+        transform: rotate(-180deg) scale(1.2);
+    }
+}
+
+/* Posições */
+.loader span:nth-child(1) {
+    top: 5em;
+    left: 5em;
+    background: dodgerblue;
+}
+
+.loader span:nth-child(2) {
+    top: -5em;
+    left: 5em;
+    background: hotpink;
+}
+
+.loader span:nth-child(3) {
+    top: 5em;
+    left: -5em;
+    background: mediumpurple;
+}
+
+.loader span:nth-child(4) {
+    top: -5em;
+    left: -5em;
+    background: limegreen;
+}
+
+/* Hover interativo */
+.loader:hover {
+    animation-duration: 0.5s;
+    transform: scale(1.2);
+    
+}
+
+.loader:hover span {
+    animation-duration: 1s;
+    transform: scale(1.4);
+    filter: brightness(1.5);
+}
